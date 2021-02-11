@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+        <title>Restaurant Review - Sentiment Analyser</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='food-favicon.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+		<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
+	</head>
+
+	<body style="background: url(https://wallpapercave.com/wp/wp2856269.gif);
+background-size:100%;">
+
+		<!-- Website Title -->
+    	<div class="container">
+            <h2 class='container-heading'><span class="heading_font">Restaurant Review's</span> Sentiment Analyser</h2>
+            <div class='description'>
+                <p>A Sentimental Analysis Of Restaruant Review Using Machine Learning.</p>
+    		</div>
+    	</div>
+
+		<!-- Result -->
+		<div class="results">
+			{% if prediction==1 %}
+				<h1>Prediction: <span class='safe'>Thanks For Your POSITIVE Review.</span></h1>
+				<img class="gif" src="{{ url_for('static', filename='Happy.gif') }}" alt="Positive Review">
+			{% elif prediction==0 %}
+				<h1>Prediction: <span class='danger'>Sorry! For This is a NEGATIVE Review.</span></h1>
+				<img class="gif" src="{{ url_for('static', filename='tenor.gif') }}" alt="Negative Review">
+			{% endif %}
+		</div>
+
+		<!-- Footer -->
+		<div class='footer'>
+            <div class="contact">
+                <a target="_blank" href="https://github.com/KhanMukhtar"><i class="fab fa-github fa-lg contact-icon"></i></a>
+                <a target="_blank" href="https://www.linkedin.com/in/mukhtar-khan-93a4bb1b8/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+            </div>
+            <p class='footer-description'>MADE BY MUKHTAR KHAN :).</p>
+        </div>
+
+	</body>
+</html>
